@@ -1,6 +1,6 @@
 from fastapi import FastAPI
 from agent.core.config import settings
-from agent.api import health
+from agent.api import health, chat
 
 def create_app() -> FastAPI:
 
@@ -11,6 +11,7 @@ def create_app() -> FastAPI:
 
     # Routers
     app.include_router(health.router)
+    app.include_router(chat.router)
 
     return app
 
